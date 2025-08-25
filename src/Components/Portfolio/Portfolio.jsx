@@ -6,6 +6,8 @@ import nyamaverse from '../../assets/nyamaverse_project.png'
 import burger from '../../assets/burger-project.png'
 import klock_logo from '../../assets/klock_project.png'
 import minimal_logo from '../../assets/minimalistic-logo-project.png'
+import velocity_logo from '../../assets/velocityfitness_design.png'
+import event_banner from '../../assets/youthconvention_banner.png'
 
 const projects = {
   development: [
@@ -21,7 +23,6 @@ const projects = {
       link: "https://github.com/yourusername/expense-tracker",
       demo: "https://expense-tracker-demo.vercel.app/",
     },
-    // add more dev projects here
   ],
   design: [
     {
@@ -48,6 +49,16 @@ const projects = {
       title: "A super cool minimalistic logo.",
       description: "Building your brand with nice logos to match your brand.",
       image: minimal_logo,
+    },
+     {
+      title: "VelocityFitnessGym Logo",
+      description: "Building your fitness brand with a beautiful and sleek logo.",
+      image: velocity_logo,
+    },
+     {
+      title: "A banner for for a group event.",
+      description: "Building events banners to unite and attract audience.",
+      image: event_banner,
     },
   ],
 };
