@@ -5,7 +5,9 @@ import profile_img from "../../assets/profile_img.png";
 
 const Hero = () => {
   return (
-    <section className="w-full min-h-screen flex items-center justify-center px-6 sm:px-12 md:px-20 lg:px-32 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <section className="w-full min-h-screen flex items-center justify-center px-6 sm:px-12 md:px-20 lg:px-32 
+      bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 pt-24 md:pt-32">
+      
       <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
         
         {/* Left Side: Text Content */}
@@ -16,10 +18,14 @@ const Hero = () => {
           className="text-center md:text-left space-y-6"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-            Hi, I’m <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">Hillary</span>
+            Hi, I’m{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+              Hillary
+            </span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-lg mx-auto md:mx-0">
-            A passionate web developer creating sleek, modern, and responsive websites with React, Tailwind CSS, and MERN stack.
+            A passionate web developer creating sleek, modern, and responsive
+            websites with React, Tailwind CSS, and MERN stack.
           </p>
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
             <motion.a
@@ -49,7 +55,7 @@ const Hero = () => {
           <img
             src={profile_img}
             alt="Profile"
-            className="w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 rounded-full shadow-2xl object-cover"
+            className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-full shadow-2xl object-cover"
           />
         </motion.div>
 
