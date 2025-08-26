@@ -5,7 +5,7 @@ import profile_img from "../../assets/profile_img.png";
 
 const Hero = () => {
   return (
-    <section className="w-full min-h-screen flex items-center justify-center px-6 sm:px-12 md:px-20 lg:px-32 
+    <section id="home" className="w-full min-h-screen flex items-center justify-center px-6 sm:px-12 md:px-20 lg:px-32 
       bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 pt-24 md:pt-32">
       
       <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
@@ -55,7 +55,7 @@ const Hero = () => {
           <img
             src={profile_img}
             alt="Profile"
-            className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-full shadow-2xl object-cover"
+            className="max-w-xs sm:max-w-sm md:max-w-md rounded-full shadow-2xl object-cover"
           />
         </motion.div>
 
