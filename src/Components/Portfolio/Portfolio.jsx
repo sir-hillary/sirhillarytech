@@ -4,8 +4,8 @@ import { Code, Palette, Github, ExternalLink } from "lucide-react";
 import sandwich_img from '../../assets/sandwich_project.png'
 import nyamaverse from '../../assets/nyamaverse_project.png'
 import burger from '../../assets/burger-project.png'
-import klock_logo from '../../assets/klock_project.png'
-import minimal_logo from '../../assets/minimalistic-logo-project.png'
+import klock_logo from '../../assets/klock_project.webp'
+import minimal_logo from '../../assets/minimalistic-logo-project.webp'
 import velocity_logo from '../../assets/velocityfitness_design.png'
 import event_banner from '../../assets/youthconvention_banner.png'
 

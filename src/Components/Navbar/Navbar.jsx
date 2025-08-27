@@ -14,7 +14,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full top-0 left-0 z-50 px-6 md:px-16 lg:px-24 flex items-center justify-between backdrop-blur-lg bg-black/40 border-b border-gray-800">
+    <nav className="fixed w-full top-0 left-0 z-50 px-6 md:px-16 lg:px-24 flex items-center justify-between border-gray-800">
       {/* Logo */}
       <ScrollLink to="home" smooth={true} duration={600} offset={-80}>
         <img src={logo} alt="Logo" className="w-32 h-auto cursor-pointer" />
@@ -46,7 +46,7 @@ const Navbar = () => {
           </ScrollLink>
         ))}
 
-        {/* Mobile-only Connect Button */}
+        {/* contact link mobile */}
         <ScrollLink
           to="contact"
           smooth={true}
@@ -59,7 +59,7 @@ const Navbar = () => {
         </ScrollLink>
       </div>
 
-      {/* Desktop Connect Button */}
+      {/* large screen Connect Button */}
       <ScrollLink
         to="contact"
         smooth={true}
@@ -70,7 +70,7 @@ const Navbar = () => {
         Connect with me
       </ScrollLink>
 
-      {/* Menu Icon (mobile only) */}
+      {/* Menu humburger icons */}
       <Menu
         className="md:hidden w-8 h-8 text-gray-300 cursor-pointer hover:text-white"
         onClick={() => setIsOpen(true)}

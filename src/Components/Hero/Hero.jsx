@@ -29,7 +29,7 @@ const Hero = () => {
           </p>
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
             <motion.a
-              href="#projects"
+              href="#portfolio"
               whileHover={{ scale: 1.05 }}
               className="px-6 py-3 rounded-2xl bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-medium shadow-md hover:shadow-lg transition"
             >
@@ -55,7 +55,7 @@ const Hero = () => {
           <img
             src={profile_img}
             alt="Profile"
-            className="max-w-xs sm:max-w-sm md:max-w-md rounded-full shadow-2xl object-cover"
+            className="w-40 sm:w-48 md:w-56 lg:w-64 rounded-full shadow-xl object-cover"
           />
         </motion.div>
 
