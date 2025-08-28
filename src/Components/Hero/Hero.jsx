@@ -6,7 +6,7 @@ import profile_img from "../../assets/profile_img.png";
 const Hero = () => {
   return (
     <section id="home" className="w-full min-h-screen flex items-center justify-center px-6 sm:px-12 md:px-20 lg:px-32 
-      bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 pt-24 md:pt-32">
+      bg-gradient-to-b from-gray-900 to-gray-800 pt-24 md:pt-32">
       
       <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
         
@@ -23,7 +23,7 @@ const Hero = () => {
               Hillary
             </span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-lg mx-auto md:mx-0">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-lg mx-auto md:mx-0">
             A passionate web developer creating sleek, modern, and responsive
             websites with React, Tailwind CSS, and MERN stack.
           </p>
