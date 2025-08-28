@@ -9,13 +9,15 @@ import minimal_logo from '../../assets/minimalistic-logo-project.webp'
 import velocity_logo from '../../assets/velocityfitness_design.png'
 import event_banner from '../../assets/youthconvention_banner.png'
 
+
+
 const projects = {
   development: [
     {
-      title: "Crypto Tracker Dashboard",
-      description: "A dashboard to track real-time cryptocurrency prices using React and Tailwind CSS.",
-      link: "https://github.com/yourusername/crypto-tracker",
-      demo: "https://crypto-tracker-demo.vercel.app/",
+      title: "A movie ticketing app BACKEND API.",
+      description: "A movie ticketing app api that controls authentication, adding new shows, controls booking of the show, role based authentication and many more features.",
+      link: "https://github.com/sir-hillary/movie-ticket-booking/",
+      demo: "https://quick-show-psi-seven.vercel.app/",
     },
     {
       title: "Expense Tracker",
