@@ -18,7 +18,7 @@ const About = () => {
             />
             {/* Glow effect */}
             <div className="absolute -inset-2 bg-primary opacity-30 blur-3xl rounded-2xl -z-10"></div>
-          </div>
+         </div>
         </div>
 
         {/* Right: Text */}

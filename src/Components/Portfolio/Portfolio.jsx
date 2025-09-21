@@ -19,11 +19,11 @@ const projects = {
       demo: "https://quick-show-psi-seven.vercel.app/",
     },
     {
-      title: "Expense Tracker",
+      title: "SMARTGPT AI Chatbot Clone – Fullstack MERN Application",
       description:
-        "Track income and expenses with charts, filters, and localStorage persistence.",
-      link: "https://github.com/yourusername/expense-tracker",
-      demo: "https://expense-tracker-demo.vercel.app/",
+      "A fullstack AI-powered chatbot built with the MERN stack, featuring secure authentication, credit-based payment plans, and seamless integration with OpenAI for text and image generation. Users can create custom prompts, receive intelligent responses, and generate images, all while enjoying a sleek dark mode UI. Image assets are managed with ImageKit, ensuring smooth storage and delivery. This project demonstrates my ability to build complete, production-ready web applications—from backend APIs to a responsive frontend with modern UI/UX.",
+      link: "https://github.com/sir-hillary/SmartGPT.git",
+      demo: "https://smart-gpt-swart.vercel.app/",
     },
     {
       title: "Expense-Tracker app",
