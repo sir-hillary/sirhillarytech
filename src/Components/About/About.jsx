@@ -28,10 +28,10 @@ const About = () => {
           </h2>
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
             Hi, I’m <span className="font-semibold text-white">Omondi Hillary</span>, 
-            a passionate <span className="text-primary">MERN Fullstack Developer</span> 
+            a passionate <span className="text-primary">MERN Fullstack Developer </span> 
             and <span className="text-primary">Creative Designer</span>.  
             I specialize in building sleek, responsive, and scalable digital 
-            experiences that merge functionality with modern design.
+            experiences that merge functionality with modern design. My goal is to create tech solutions that makes a brand standout among the best. See my latest projects and tech solutions in <a href="#portfolio" className="text-primary hover:text-blue-500">My Porfolio</a>
           </p>
 
           {/* Skills Grid */}
