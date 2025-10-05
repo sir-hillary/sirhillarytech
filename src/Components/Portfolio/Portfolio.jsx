@@ -23,7 +23,7 @@ const projects = {
       description:
       "A fullstack AI-powered chatbot built with the MERN stack, featuring secure authentication, credit-based payment plans, and seamless integration with OpenAI for text and image generation. Users can create custom prompts, receive intelligent responses, and generate images, all while enjoying a sleek dark mode UI. Image assets are managed with ImageKit, ensuring smooth storage and delivery. This project demonstrates my ability to build complete, production-ready web applications—from backend APIs to a responsive frontend with modern UI/UX.",
       link: "https://github.com/sir-hillary/SmartGPT.git",
-      demo: "https://smart-gpt-swart.vercel.app/",
+      demo: "https://smart-gpt-swart.vercel.app",
     },
     {
       title: "Expense-Tracker app",
@@ -31,6 +31,19 @@ const projects = {
       link: "https://github.com/sir-hillary/expense-tracker.git",
       demo: "https://sir-hillary.github.io/expense-tracker/",
     },
+    {
+      title: "QuickBlog – Create Smarter, Blog Faster",
+      description: "QuickBlog is an AI-powered blogging platform that helps creators write and publish blogs effortlessly. It saves time, boosts creativity, and makes content creation simple for bloggers, brands, and marketers alike.",
+      link: "https://github.com/sir-hillary/SMARTBLOG.git",
+      demo: "https://smartblog-inky.vercel.app",
+    },
+     {
+      title: "Mkulima Connect Africa – Growing Digital Agriculture",
+      description: "Mkulima Connect Africa is a professional client landing page designed to connect farmers, buyers, and agri-entrepreneurs across Africa. It promotes agricultural visibility, fosters trust, and bridges the gap between farmers and the digital market.",
+      link: "https://github.com/sir-hillary/Mkulima-Connect-Project.git",
+      demo: "https://mkulimaconnectafrica.netlify.app/",
+    },
+
   ],
   design: [
     {
