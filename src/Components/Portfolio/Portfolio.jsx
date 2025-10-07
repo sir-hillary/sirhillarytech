@@ -35,7 +35,7 @@ const projects = {
       title: "QuickBlog – Create Smarter, Blog Faster",
       description: "QuickBlog is an AI-powered blogging platform that helps creators write and publish blogs effortlessly. It saves time, boosts creativity, and makes content creation simple for bloggers, brands, and marketers alike.",
       link: "https://github.com/sir-hillary/SMARTBLOG.git",
-      demo: "https://smartblog-inky.vercel.app",
+      demo: "https://quickblog-eight-nu.vercel.app",
     },
      {
       title: "Mkulima Connect Africa – Growing Digital Agriculture",
