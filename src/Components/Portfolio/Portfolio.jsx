@@ -21,7 +21,7 @@ const projects = {
     {
       title: "SMARTGPT AI Chatbot Clone – Fullstack MERN Application",
       description:
-      "A fullstack AI-powered chatbot built with the MERN stack, featuring secure authentication, credit-based payment plans, and seamless integration with OpenAI for text and image generation. Users can create custom prompts, receive intelligent responses, and generate images, all while enjoying a sleek dark mode UI. Image assets are managed with ImageKit, ensuring smooth storage and delivery. This project demonstrates my ability to build complete, production-ready web applications—from backend APIs to a responsive frontend with modern UI/UX.",
+      "Create images and text content with this AI clone made with MERN stack technologies. Its fast and responsive with all devices",
       link: "https://github.com/sir-hillary/SmartGPT.git",
       demo: "https://smart-gpt-swart.vercel.app",
     },
