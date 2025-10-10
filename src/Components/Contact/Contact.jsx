@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Github, Linkedin, Twitter, Mail, Phone, Send, MessageCircle } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Phone, Send, MessageCircle, Facebook } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
@@ -56,17 +56,17 @@ const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
               className="p-3 bg-primary rounded-full hover:bg-primary-dull transition">
               <MessageCircle className="w-5 h-5" />
             </a>
-            <a href="https://github.com/YOURUSERNAME" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/sir-hillary" target="_blank" rel="noopener noreferrer"
               className="p-3 bg-primary rounded-full hover:bg-primary-dull transition">
               <Github className="w-5 h-5" />
             </a>
-            <a href="https://linkedin.com/in/YOURUSERNAME" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/sirhillary-tech-13827a21b" target="_blank" rel="noopener noreferrer"
               className="p-3 bg-primary rounded-full hover:bg-primary-dull transition">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="https://twitter.com/YOURUSERNAME" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.facebook.com/profile.php?id=100075875217577" target="_blank" rel="noopener noreferrer"
               className="p-3 bg-primary rounded-full hover:bg-primary-dull transition">
-              <Twitter className="w-5 h-5" />
+              <Facebook className="w-5 h-5" />
             </a>
           </div>
 

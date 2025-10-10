@@ -1,6 +1,6 @@
  
 // Footer.jsx
-import { Facebook, Twitter, Instagram, Linkedin, Github, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Github, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import logo from "../../assets/light-logo.svg";
 
 export default function Footer() {
@@ -20,11 +20,10 @@ export default function Footer() {
     Building sleek, modern, and professional digital experiences.
   </p>
   <div className="flex space-x-4 mt-6">
-    <a href="https://facebook.com" target="_blank" className="hover:text-primary transition"><Facebook size={20} /></a>
-    <a href="https://twitter.com" target="_blank" className="hover:text-primary transition"><Twitter size={20} /></a>
-    <a href="https://instagram.com" target="_blank" className="hover:text-primary transition"><Instagram size={20} /></a>
-    <a href="https://linkedin.com" target="_blank" className="hover:text-primary transition"><Linkedin size={20} /></a>
-    <a href="https://github.com" target="_blank" className="hover:text-primary transition"><Github size={20} /></a>
+    <a href="https://www.facebook.com/profile.php?id=100075875217577" target="_blank" className="hover:text-primary transition"><Facebook size={20} /></a>
+    <a href="https://wa.me/254726436088" target="_blank" className="hover:text-primary transition"><MessageCircle size={20} /></a>
+    <a href="https://github.com/sir-hillary" target="_blank" className="hover:text-primary transition"><Github size={20} /></a>
+    <a href="https://www.linkedin.com/in/sirhillary-tech-13827a21b" target="_blank" className="hover:text-primary transition"><Linkedin size={20} /></a>
   </div>
 </div>
 

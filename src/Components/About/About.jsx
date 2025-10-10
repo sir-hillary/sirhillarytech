@@ -45,7 +45,6 @@ const About = () => {
               "Tailwind CSS",
               "Figma",
               "Canva",
-              "WordPress",
               "UI/UX Design",
               "REST APIs",
               "Git & GitHub",
