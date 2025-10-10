@@ -43,6 +43,12 @@ const projects = {
       link: "https://github.com/sir-hillary/Mkulima-Connect-Project.git",
       demo: "https://mkulimaconnectafrica.netlify.app/",
     },
+     {
+      title: "Agency.ai – Digital Marketing Website",
+      description: "A modern, responsive single-page website built for digital marketing agencies to attract clients and boost online visibility. Designed to convert visitors into leads through sleek visuals, clear messaging, and strong calls-to-action.",
+      link: "https://github.com/sir-hillary/agency-ai.git",
+      demo: "https://agency-ai-gamma-six.vercel.app",
+    },
 
   ],
   design: [
