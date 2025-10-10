@@ -56,7 +56,7 @@ const Services = () => {
         <div className="mt-14 flex flex-col sm:flex-row gap-6 justify-center">
           <a
             href="/resume.pdf"
-            download
+            download = 'Hillary_Omondi_resume.pdf'
             className="flex items-center gap-2 bg-primary hover:bg-primary-dull text-white px-6 py-3 rounded-xl shadow-lg 
                        transition duration-300 ease-in-out"
           >
