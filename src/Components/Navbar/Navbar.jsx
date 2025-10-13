@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../assets/light-logo.svg";
+import logo from "../../assets/logo.png";
 import { Link as ScrollLink } from "react-scroll";
 import { Menu, X } from "lucide-react";
 

@@ -1,7 +1,7 @@
  
 // Footer.jsx
 import { Facebook, Twitter, Instagram, Linkedin, Github, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
-import logo from "../../assets/light-logo.svg";
+import logo from "../../assets/logo.png";
 
 export default function Footer() {
   return (
