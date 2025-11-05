@@ -76,7 +76,7 @@ export default function Portfolio() {
                     <Github className="w-5 h-5" />
                   </a>
                 </div>
-                {project.completed ? <p className="text-sm bg-green-400 text-white px-4 py-2 rounded-md w-32 mt-4">Completed</p> : <p className="text-sm text-orange-400">Ongoing</p>}
+                {project.completed ? <p className="text-sm bg-green-400 text-white px-6 py-1 rounded-md w-32 mt-4">Completed</p> : <p className="text-sm bg-orange-400 text-white px-4 py-1 rounded-md w-32 mt-4">Ongoing...</p>}
               </div>
             ))}
           </div>
