@@ -14,7 +14,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full top-0 left-0 z-50 px-6 md:px-16 lg:px-24 pt-5 flex items-center justify-between border-gray-800">
+    <nav className=" fixed w-full top-0 left-0 z-50 px-6 md:px-16 lg:px-24 pt-5 flex items-center justify-between border-gray-800">
       {/* Logo */}
       <ScrollLink to="home" smooth={true} duration={600} offset={-80}>
         <img src={logo} alt="Logo" className="w-32 h-auto cursor-pointer" />

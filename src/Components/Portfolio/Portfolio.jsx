@@ -8,6 +8,7 @@ import klock_logo from "../../assets/klock_project.webp";
 import minimal_logo from "../../assets/minimalistic-logo-project.webp";
 import velocity_logo from "../../assets/velocityfitness_design.png";
 import event_banner from "../../assets/youthconvention_banner.png";
+import ava_logo from "../../assets/AVA_logo.webp"
 
 const projects = {
   development: [
@@ -32,10 +33,10 @@ const projects = {
       demo: "https://sir-hillary.github.io/expense-tracker/",
     },
     {
-      title: "QuickBlog – Create Smarter, Blog Faster",
-      description: "QuickBlog is an AI-powered blogging platform that helps creators write and publish blogs effortlessly. It saves time, boosts creativity, and makes content creation simple for bloggers, brands, and marketers alike.",
+      title: "SmartBlog – Create Smarter, Blog Faster",
+      description: "SmartBlog is an AI-powered blogging platform that helps creators write and publish blogs effortlessly. It saves time, boosts creativity, and makes content creation simple for bloggers, brands, and marketers alike.",
       link: "https://github.com/sir-hillary/SMARTBLOG.git",
-      demo: "https://quickblog-eight-nu.vercel.app",
+      demo: "https://smartblog-inky.vercel.app",
     },
      {
       title: "Mkulima Connect Africa – Growing Digital Agriculture",
@@ -89,6 +90,11 @@ const projects = {
       title: "A banner for for a group event.",
       description: "Building events banners to unite and attract audience.",
       image: event_banner,
+    },
+     {
+      title: "A really cool but simple logo of AVA brand",
+      description: "Creating logo that outshines your expectation.",
+      image: ava_logo,
     },
   ],
 };
