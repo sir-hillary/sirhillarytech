@@ -63,7 +63,7 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt="Logo"
-                className="w-40 h-auto transition-transform duration-300 group-hover:scale-105"
+                className="w-36 sm:w-45 h-auto transition-transform duration-300 group-hover:scale-105"
               />
             </div>
           </div>
