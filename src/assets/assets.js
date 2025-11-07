@@ -13,6 +13,7 @@ import GreenCart from "./greencart_img.png";
 import mediTrack from "./meditrack_img.png";
 import mkulima_img from "./mkulima_img.png";
 import myWebsite from "./myWebsite_img.png";
+import jackyLogo from './jacky-logo-img.png'
 
 export const projects = {
   development: [
@@ -76,7 +77,7 @@ export const projects = {
       description: "This is my sleek newly updated portfolio website that showcases my services and projects.",
       link: "https://github.com/sir-hillary/sirhillarytech",
       demo: "https://sirhillarytech.vercel.app",
-      completed: false,
+      completed: true,
       image: myWebsite
     },
     {
@@ -96,6 +97,11 @@ export const projects = {
     },
   ],
   design: [
+    {
+      title: "Jackies Pharmaceuticals logo design",
+      description: "A Canva-designed jackie's pharmaceuticals for a website i designed",
+      image: jackyLogo,
+    },
     {
       title: "SandWich Ad Poster",
       description: "A Canva-designed sandwich poster that markets the brand.",
