@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { ChevronDown, Github, Linkedin, Download } from "lucide-react";
 import profile_img from "../../assets/sirhillary.png";
 import { useNavigate } from "react-router-dom";
+import { FaFacebook, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const Hero = () => {
 
@@ -15,6 +17,29 @@ const Hero = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const socialLinks = [
+              {
+                icon: FaWhatsapp,
+                href: "https://wa.me/254101703739",
+                label: "WhatsApp",
+              },
+              {
+                icon: FaLinkedin,
+                href: "https://www.linkedin.com/in/sirhillary-tech-13827a21b",
+                label: "LinkedIn",
+              },
+              {
+                icon: FaFacebook,
+                href: "https://www.facebook.com/profile.php?id=100075875217577",
+                label: "Facebook",
+              },
+              {
+                icon: FaGithub,
+                href: "https://github.com/sir-hillary",
+                label: "LinkedIn",
+              },
+            ]
 
   return (
     <section
@@ -133,18 +158,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex justify-center lg:justify-start gap-4 pt-4"
           >
-            {[
-              {
-                icon: Github,
-                href: "https://github.com/sir-hillary",
-                label: "GitHub",
-              },
-              {
-                icon: Linkedin,
-                href: "https://www.linkedin.com/in/sirhillary-tech-13827a21b",
-                label: "LinkedIn",
-              },
-            ].map((social, index) => (
+            {socialLinks.map((social, index) => (
               <motion.a
                 key={index}
                 href={social.href}
