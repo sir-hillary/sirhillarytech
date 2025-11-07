@@ -11,13 +11,11 @@ import BackToTop from '../Components/BackToTop'
 const Home = () => {
   return (
     <div>
-      <Navbar />
       <Hero />
       <About />
       <Portfolio />
       <Services />
       <Contact />
-      <Footer />
       <BackToTop />
     </div>
   )

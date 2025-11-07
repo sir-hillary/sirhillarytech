@@ -6,6 +6,13 @@ import minimal_logo from "./minimalistic-logo-project.webp";
 import velocity_logo from "./velocityfitness_design.png";
 import event_banner from "./youthconvention_banner.png";
 import ava_logo from "./AVA_logo.webp";
+import smartBlog from "./smartblog_img.png"
+import smartGPT from "./smartgpt_img.png"
+import agency_AI from "./agency_ai.png"
+import GreenCart from "./greencart_img.png"
+import mediTrack from "./meditrack_img.png"
+import mkulima_img from "./mkulima_img.png"
+
 
 export const projects = {
   development: [
@@ -15,7 +22,8 @@ export const projects = {
         "Create images and text content with this AI clone made with MERN stack technologies. Its fast and responsive with all devices",
       link: "https://github.com/sir-hillary/SmartGPT.git",
       demo: "https://smart-gpt-swart.vercel.app",
-      completed: true
+      completed: true,
+      image: smartGPT
     },
 
     {
@@ -24,7 +32,8 @@ export const projects = {
         "SmartBlog is an AI-powered blogging platform that helps creators write and publish blogs effortlessly. It saves time, boosts creativity, and makes content creation simple for bloggers, brands, and marketers alike.",
       link: "https://github.com/sir-hillary/SMARTBLOG.git",
       demo: "https://smartblog-inky.vercel.app",
-      completed: true
+      completed: true,
+      image: smartBlog
     },
     {
       title: "Mkulima Connect Africa – Growing Digital Agriculture",
@@ -32,7 +41,8 @@ export const projects = {
         "Mkulima Connect Africa is a professional client landing page designed to connect farmers, buyers, and agri-entrepreneurs across Africa. It promotes agricultural visibility, fosters trust, and bridges the gap between farmers and the digital market.",
       link: "https://github.com/sir-hillary/Mkulima-Connect-Project.git",
       demo: "https://mkulimaconnectafrica.netlify.app",
-      completed: true
+      completed: true,
+      image: mkulima_img
     },
     {
       title: "Agency.ai – Digital Marketing Website",
@@ -40,7 +50,8 @@ export const projects = {
         "A modern, responsive single-page website built for digital marketing agencies to attract clients and boost online visibility. Designed to convert visitors into leads through sleek visuals, clear messaging, and strong calls-to-action.",
       link: "https://github.com/sir-hillary/agency-ai.git",
       demo: "https://agency-ai-gamma-six.vercel.app",
-      completed: true
+      completed: true,
+      image: agency_AI
     },
     {
       title: "GreenCart – Smart Grocery Shopping Made Easy",
@@ -48,7 +59,8 @@ export const projects = {
         "A fullstack MERN e-commerce platform that helps customers order fresh groceries quickly and conveniently from local vendors, saving time while ensuring quality and accessibility.",
       link: "https://github.com/sir-hillary/greencart-ecommerce-web-app",
       demo: "https://greencartecommerce.vercel.app",
-      completed: false
+      completed: false,
+      image: GreenCart,
     },
     {
       title: "MediTrack – Pharmacy Management System",
@@ -56,7 +68,8 @@ export const projects = {
         "A full-stack MERN web app that helps pharmacy owners and staff efficiently manage drug inventory, sales, and transactions in real time. MediTrack simplifies daily operations with smart analytics, role-based access, and an intuitive dashboard interface.",
       link: "https://github.com/sir-hillary/meditrack",
       demo: "https://jackypharmaceuticals.vercel.app",
-      completed: true
+      completed: true,
+      image: mediTrack,
     },
     {
       title: "A movie ticketing app BACKEND API.",
