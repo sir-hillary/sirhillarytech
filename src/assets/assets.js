@@ -6,13 +6,13 @@ import minimal_logo from "./minimalistic-logo-project.webp";
 import velocity_logo from "./velocityfitness_design.png";
 import event_banner from "./youthconvention_banner.png";
 import ava_logo from "./AVA_logo.webp";
-import smartBlog from "./smartblog_img.png"
-import smartGPT from "./smartgpt_img.png"
-import agency_AI from "./agency_ai.png"
-import GreenCart from "./greencart_img.png"
-import mediTrack from "./meditrack_img.png"
-import mkulima_img from "./mkulima_img.png"
-
+import smartBlog from "./smartblog_img.png";
+import smartGPT from "./smartgpt_img.png";
+import agency_AI from "./agency_ai.png";
+import GreenCart from "./greencart_img.png";
+import mediTrack from "./meditrack_img.png";
+import mkulima_img from "./mkulima_img.png";
+import myWebsite from "./myWebsite_img.png";
 
 export const projects = {
   development: [
@@ -23,7 +23,7 @@ export const projects = {
       link: "https://github.com/sir-hillary/SmartGPT.git",
       demo: "https://smart-gpt-swart.vercel.app",
       completed: true,
-      image: smartGPT
+      image: smartGPT,
     },
 
     {
@@ -33,7 +33,7 @@ export const projects = {
       link: "https://github.com/sir-hillary/SMARTBLOG.git",
       demo: "https://smartblog-inky.vercel.app",
       completed: true,
-      image: smartBlog
+      image: smartBlog,
     },
     {
       title: "Mkulima Connect Africa – Growing Digital Agriculture",
@@ -42,7 +42,7 @@ export const projects = {
       link: "https://github.com/sir-hillary/Mkulima-Connect-Project.git",
       demo: "https://mkulimaconnectafrica.netlify.app",
       completed: true,
-      image: mkulima_img
+      image: mkulima_img,
     },
     {
       title: "Agency.ai – Digital Marketing Website",
@@ -51,7 +51,7 @@ export const projects = {
       link: "https://github.com/sir-hillary/agency-ai.git",
       demo: "https://agency-ai-gamma-six.vercel.app",
       completed: true,
-      image: agency_AI
+      image: agency_AI,
     },
     {
       title: "GreenCart – Smart Grocery Shopping Made Easy",
@@ -72,19 +72,27 @@ export const projects = {
       image: mediTrack,
     },
     {
+      title: "My Portfolio",
+      description: "This is my sleek newly updated portfolio website that showcases my services and projects.",
+      link: "https://github.com/sir-hillary/sirhillarytech",
+      demo: "https://sirhillarytech.vercel.app",
+      completed: false,
+      image: myWebsite
+    },
+    {
       title: "A movie ticketing app BACKEND API.",
       description:
         "A movie ticketing app api that controls authentication, adding new shows, controls booking of the show, role based authentication and many more features.",
       link: "https://github.com/sir-hillary/movie-ticket-booking/",
       demo: "https://quick-show-psi-seven.vercel.app",
-      completed: false
+      completed: false,
     },
     {
       title: "Expense-Tracker app",
       description: "Track Expenses easily using UI and localstorage.",
       link: "https://github.com/sir-hillary/expense-tracker.git",
       demo: "https://sir-hillary.github.io/expense-tracker/",
-      completed: false
+      completed: false,
     },
   ],
   design: [
