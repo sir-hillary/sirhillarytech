@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, Github, Linkedin, Download } from "lucide-react";
+import { ChevronDown, Download } from "lucide-react";
 import profile_img from "../../assets/sirhillary.png";
 import { useNavigate } from "react-router-dom";
-import { FaFacebook, FaWhatsapp } from "react-icons/fa";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { socialLinks } from "../../assets/assets";
 
 const Hero = () => {
 
@@ -18,28 +17,7 @@ const Hero = () => {
     }
   };
 
-  const socialLinks = [
-              {
-                icon: FaWhatsapp,
-                href: "https://wa.me/254101703739",
-                label: "WhatsApp",
-              },
-              {
-                icon: FaLinkedin,
-                href: "https://www.linkedin.com/in/sirhillary-tech-13827a21b",
-                label: "LinkedIn",
-              },
-              {
-                icon: FaFacebook,
-                href: "https://www.facebook.com/profile.php?id=100075875217577",
-                label: "Facebook",
-              },
-              {
-                icon: FaGithub,
-                href: "https://github.com/sir-hillary",
-                label: "LinkedIn",
-              },
-            ]
+ 
 
   return (
     <section
@@ -116,6 +94,7 @@ const Hero = () => {
             <span className="text-primary font-medium">
               sleek, modern, and responsive
             </span>
+            {" "}
             web & mobile experiences, blending clean design with powerful
             technologies like React, Node.js, React Native and the MERN stack.
           </motion.p>
@@ -186,10 +165,10 @@ const Hero = () => {
           className="flex justify-center lg:justify-end relative"
         >
           <div className="relative">
-            {/* Background Glow */}
+           
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full blur-2xl transform scale-110"></div>
 
-            {/* Image Container */}
+          
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}

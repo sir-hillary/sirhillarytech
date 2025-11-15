@@ -14,6 +14,7 @@ import mediTrack from "./meditrack_img.png";
 import mkulima_img from "./mkulima_img.png";
 import myWebsite from "./myWebsite_img.png";
 import jackyLogo from './jacky-logo-img.png'
+import { FaFacebook, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export const projects = {
   development: [
@@ -37,6 +38,15 @@ export const projects = {
       image: smartBlog,
     },
     {
+      title: "GreenCart – Smart Grocery Shopping Made Easy",
+      description:
+        "A fullstack MERN e-commerce platform that helps customers order fresh groceries quickly and conveniently from local vendors, saving time while ensuring quality and accessibility.",
+      link: "https://github.com/sir-hillary/greencart-ecommerce-web-app",
+      demo: "https://greencartecommerce.vercel.app",
+      completed: false,
+      image: GreenCart,
+    },
+    {
       title: "Mkulima Connect Africa – Growing Digital Agriculture",
       description:
         "Mkulima Connect Africa is a professional client landing page designed to connect farmers, buyers, and agri-entrepreneurs across Africa. It promotes agricultural visibility, fosters trust, and bridges the gap between farmers and the digital market.",
@@ -54,15 +64,7 @@ export const projects = {
       completed: true,
       image: agency_AI,
     },
-    {
-      title: "GreenCart – Smart Grocery Shopping Made Easy",
-      description:
-        "A fullstack MERN e-commerce platform that helps customers order fresh groceries quickly and conveniently from local vendors, saving time while ensuring quality and accessibility.",
-      link: "https://github.com/sir-hillary/greencart-ecommerce-web-app",
-      demo: "https://greencartecommerce.vercel.app",
-      completed: false,
-      image: GreenCart,
-    },
+    
     {
       title: "MediTrack – Pharmacy Management System",
       description:
@@ -147,3 +149,26 @@ export const projects = {
     },
   ],
 };
+
+ export const socialLinks = [
+              {
+                icon: FaWhatsapp,
+                href: "https://wa.me/254101703739",
+                label: "WhatsApp",
+              },
+              {
+                icon: FaLinkedin,
+                href: "https://www.linkedin.com/in/sirhillary-tech-13827a21b",
+                label: "LinkedIn",
+              },
+              {
+                icon: FaFacebook,
+                href: "https://www.facebook.com/profile.php?id=100075875217577",
+                label: "Facebook",
+              },
+              {
+                icon: FaGithub,
+                href: "https://github.com/sir-hillary",
+                label: "LinkedIn",
+              },
+            ]
