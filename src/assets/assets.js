@@ -43,7 +43,7 @@ export const projects = {
         "A fullstack MERN e-commerce platform that helps customers order fresh groceries quickly and conveniently from local vendors, saving time while ensuring quality and accessibility.",
       link: "https://github.com/sir-hillary/greencart-ecommerce-web-app",
       demo: "https://greencartecommerce.vercel.app",
-      completed: false,
+      completed: true,
       image: GreenCart,
     },
     {
