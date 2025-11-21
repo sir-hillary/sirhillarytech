@@ -14,7 +14,7 @@ import mediTrack from "./meditrack_img.png";
 import mkulima_img from "./mkulima_img.png";
 import myWebsite from "./myWebsite_img.png";
 import jackyLogo from './jacky-logo-img.png';
-import mern_auth from './mern-auth.png';
+import mern_auth from './mern_auth.png';
 
 import { FaFacebook, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
