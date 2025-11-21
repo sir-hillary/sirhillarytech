@@ -13,7 +13,9 @@ import GreenCart from "./greencart_img.png";
 import mediTrack from "./meditrack_img.png";
 import mkulima_img from "./mkulima_img.png";
 import myWebsite from "./myWebsite_img.png";
-import jackyLogo from './jacky-logo-img.png'
+import jackyLogo from './jacky-logo-img.png';
+import mern_auth from './mern-auth.png';
+
 import { FaFacebook, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export const projects = {
@@ -86,16 +88,17 @@ export const projects = {
       title: "A movie ticketing app BACKEND API.",
       description:
         "A movie ticketing app api that controls authentication, adding new shows, controls booking of the show, role based authentication and many more features.",
-      link: "https://github.com/sir-hillary/movie-ticket-booking/",
+      link: "https://github.com/sir-hillary/movie-ticket-booking",
       demo: "https://quick-show-psi-seven.vercel.app",
       completed: false,
     },
     {
-      title: "Expense-Tracker app",
-      description: "Track Expenses easily using UI and localstorage.",
-      link: "https://github.com/sir-hillary/expense-tracker.git",
-      demo: "https://sir-hillary.github.io/expense-tracker/",
-      completed: false,
+      title: "Secure MERN Authentication System",
+      description: "A full-stack authentication solution with JWT login, email verification, and password reset. Built with React, Tailwind CSS, Node.js, Express, and MongoDB, it delivers a secure and seamless user experience for modern web apps.",
+      link: "https://github.com/sir-hillary/MERN-AUTH",
+      demo: "https://mern-auth-six-eta.vercel.app",
+      completed: true,
+      image: mern_auth
     },
   ],
   design: [
