@@ -15,6 +15,7 @@ import mkulima_img from "./mkulima_img.png";
 import myWebsite from "./myWebsite_img.png";
 import jackyLogo from './jacky-logo-img.png';
 import mern_auth from './mern_auth.png';
+import kuza_career from './kuzacareer.png';
 
 import { FaFacebook, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
@@ -85,12 +86,13 @@ export const projects = {
       image: myWebsite
     },
     {
-      title: "A movie ticketing app BACKEND API.",
+      title: "KuzaCareer AI — Smart Resume Builder",
       description:
-        "A movie ticketing app api that controls authentication, adding new shows, controls booking of the show, role based authentication and many more features.",
-      link: "https://github.com/sir-hillary/movie-ticket-booking",
-      demo: "https://quick-show-psi-seven.vercel.app",
+        "KuzaCareer AI is a modern resume builder that uses artificial intelligence to help job seekers create clean, professional CVs in minutes. It solves the problem of poor resume formatting, long creation time, and lack of career guidance by generating personalized, ready-to-use resumes instantly.",
+      link: "https://github.com/sir-hillary/PERFECTME-RESUME-BUILDER",
+      demo: "https://kuzacareer.vercel.app",
       completed: false,
+      image: kuza_career
     },
     {
       title: "Secure MERN Authentication System",
