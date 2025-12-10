@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Children } from "react";
 import logo from "../../assets/logo.png";
 import { Link as ScrollLink } from "react-scroll";
 import { Menu, X, ExternalLink } from "lucide-react";
@@ -10,7 +10,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -18,7 +17,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
 
   useEffect(() => {
     setIsOpen(false);
@@ -30,6 +28,14 @@ const Navbar = () => {
     { name: "Portfolio", to: "portfolio", type: "section" },
     { name: "Services", to: "services", type: "section" },
     { name: "Contact", to: "contact", type: "section" },
+    {
+      name: "Softwares",
+      type: "dropdown",
+      children: [
+        { name: "Biometrics", to: "https://biometric.kemrut.com" },
+        { name: "Microfinance", to: "https://kss.kemrut.com/" },
+      ],
+    },
   ];
 
   const handleNavClick = (item) => {
@@ -71,7 +77,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item, idx) => (
-              <div key={idx} className="relative">
+              <div key={idx} className="group relative">
                 {item.type === "route" ? (
                   <Link
                     to={item.to}
@@ -84,10 +90,49 @@ const Navbar = () => {
                     {item.name}
                     <span
                       className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 transition-all duration-300 ${
-                        location.pathname === item.to ? "w-3/4" : "w-0 group-hover:w-3/4"
+                        location.pathname === item.to
+                          ? "w-3/4"
+                          : "w-0 group-hover:w-3/4"
                       }`}
                     ></span>
                   </Link>
+                ) : item.type === "dropdown" ? (
+                  <div className="relative">
+                    <button className="px-4 py-2 rounded-lg font-medium text-gray-300 hover:text-white transition-all duration-300 flex items-center gap-1">
+                      {item.name}
+                      <svg
+                        className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 w-0 group-hover:w-3/4 transition-all duration-300"></span>
+                    </button>
+
+                    {/* Dropdown Menu */}
+                    <div className="absolute top-full left-0 mt-1 w-48 bg-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 border border-gray-700">
+                      <div className="py-1">
+                        {item.children?.map((child, childIdx) => (
+                          <a
+                            key={childIdx}
+                            href={child.to}
+                            target="_blank"
+                            className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-700 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
+                          >
+                            {child.name}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 ) : (
                   <ScrollLink
                     to={item.to}
@@ -106,8 +151,6 @@ const Navbar = () => {
 
           {/* Desktop Right Section */}
           <div className="hidden lg:flex items-center space-x-4">
-            
-
             {/* Connect Button */}
             <ScrollLink
               to="contact"
@@ -123,8 +166,6 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="flex lg:hidden items-center space-x-3">
-           
-
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300"
