@@ -10,6 +10,7 @@ import {
   Rocket
 } from "lucide-react";
 import { skills, values, stats } from "../assets/assets";
+import { Link } from "react-router-dom";
 
 const AboutPage = () => {
   
@@ -246,22 +247,22 @@ const AboutPage = () => {
                 Let's discuss how we can help transform your ideas into exceptional digital solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
+                <Link
+                  to='/contact'
                   className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-primary text-white font-semibold 
                     rounded-xl hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
                 >
                   Start a Project
                   <Zap className="w-5 h-5" />
-                </a>
-                <a
-                  href="/portfolio"
+                </Link>
+                <Link
+                  to='/portfolio'
                   className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gray-800/50 border border-gray-700 text-gray-300 font-semibold 
                     rounded-xl hover:bg-gray-700/50 transition-all duration-300 hover:shadow-lg"
                 >
                   View Our Work
                   <Code2 className="w-5 h-5" />
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>
