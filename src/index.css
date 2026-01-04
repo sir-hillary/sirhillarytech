@@ -4,9 +4,9 @@
 
 /* Theme colors (sync with Hero + Navbar) */
 @theme {
-  --color-primary: #8b5cf6; /* Purple */
-  --color-secondary: #06b6d4; /* Cyan */
-  --color-primary-dull: #6d28d9; /* Darker purple */
+  --color-primary: #e8781c; /* orange */
+  --color-secondary: #fff; /* white */
+  --color-primary-dull: #f0ae77; /* tacao */
 }
 
 /* Global Styles */

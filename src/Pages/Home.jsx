@@ -1,21 +1,11 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
-import Hero from '../Components/Hero/Hero'
-import About from '../Components/About/About'
-import Services from '../Components/Services/Services'
-import Contact from '../Components/Contact/Contact'
-import Portfolio from '../Components/Portfolio/Portfolio'
-import Footer from '../Components/Footer/Footer'
 import BackToTop from '../Components/BackToTop'
+import HomePage from '../Components/Hero/Hero'
 
 const Home = () => {
   return (
     <div>
-      <Hero />
-      <About />
-      <Portfolio />
-      <Services />
-      <Contact />
+      <HomePage />
       <BackToTop />
     </div>
   )

@@ -1,9 +1,27 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { Code, Palette, Github, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
-import { projects } from "../assets/assets";
+import { motion } from "framer-motion";
+import { 
+  Code, 
+  Github, 
+  ExternalLink, 
+  ChevronDown, 
+  ChevronUp,
+  Layers,
+  CheckCircle,
+  Clock,
+  Globe,
+  Database,
+  Server,
+  Smartphone,
+  Cloud,
+  Cpu,
+  Zap
+} from "lucide-react";
+import { projects,analytics } from "../assets/assets";
 
 const PortfolioPage = () => {
-  const [activeTab, setActiveTab] = useState("development");
+
   const [expandedDescriptions, setExpandedDescriptions] = useState({});
 
   const toggleDescription = (projectId) => {
@@ -13,243 +31,306 @@ const PortfolioPage = () => {
     }));
   };
 
-  const truncateText = (text, maxLength = 120) => {
+  const truncateText = (text, maxLength = 100) => {
     if (text.length <= maxLength) return text;
     return text.substring(0, maxLength) + '...';
   };
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
+  // -------------------------Technology icons mapping
+  const getTechIcon = (tech) => {
+    const icons = {
+      'React': <Cpu className="w-3 h-3" />,
+      'Node.js': <Server className="w-3 h-3" />,
+      'MongoDB': <Database className="w-3 h-3" />,
+      'Express': <Server className="w-3 h-3" />,
+      'TypeScript': <Code className="w-3 h-3" />,
+      'React Native': <Smartphone className="w-3 h-3" />,
+      'AWS': <Cloud className="w-3 h-3" />,
+      'Docker': <Server className="w-3 h-3" />,
+      'Next.js': <Globe className="w-3 h-3" />,
+      'Python': <Code className="w-3 h-3" />,
+      'Firebase': <Cloud className="w-3 h-3" />,
+    };
+    return icons[tech] || <Code className="w-3 h-3" />;
+  };
+
+
   return (
-    <div className="min-h-screen bg-black text-white pt-24 pb-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12 lg:mb-16">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6">
-            My Portfolio
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/*----------------------- Header--------------------- */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-8 lg:mb-12"
+        >
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 mb-4 sm:mb-6"
+          >
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full"></div>
+            <span className="text-xs sm:text-sm text-gray-300 font-medium">
+              Showcasing Digital Excellence
+            </span>
+          </motion.div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4">
+            Development<span className="text-primary"> Projects</span>
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            A comprehensive showcase of my work in{" "}
-            <span className="text-primary">web development</span> and{" "}
-            <span className="text-primary">graphic design</span>. 
-            Explore my projects and creative solutions.
+          <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl lg:max-w-3xl mx-auto px-2 sm:px-4">
+            Explore our collection of impactful software solutions that deliver 
+            measurable business results and exceptional user experiences
           </p>
-        </div>
+        </motion.div>
 
-        {/* Tabs */}
-        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 lg:gap-6 mb-12 lg:mb-16 px-4">
-          <button
-            onClick={() => setActiveTab("development")}
-            className={`px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-xl font-semibold flex items-center justify-center gap-2 sm:gap-3 transition-all text-sm sm:text-base lg:text-lg ${
-              activeTab === "development"
-                ? "bg-primary text-white shadow-lg shadow-primary/30 transform scale-105"
-                : "bg-gray-800 hover:bg-gray-700 hover:scale-105"
-            }`}
-          >
-            <Code className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" /> 
-            <span>Development</span>
-          </button>
-          <button
-            onClick={() => setActiveTab("design")}
-            className={`px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-xl font-semibold flex items-center justify-center gap-2 sm:gap-3 transition-all text-sm sm:text-base lg:text-lg ${
-              activeTab === "design"
-                ? "bg-primary text-white shadow-lg shadow-primary/30 transform scale-105"
-                : "bg-gray-800 hover:bg-gray-700 hover:scale-105"
-            }`}
-          >
-            <Palette className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" /> 
-            <span>Design</span>
-          </button>
-        </div>
+        {/*------------------- Filter/Sort Section---------------------------- */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-2"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg">
+            <Code className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-gray-300">
+              {projects.development.length} Projects
+            </span>
+          </div>
+        </motion.div>
 
-        {/* Projects Section */}
-        <div className="px-2 sm:px-4">
-          {/* Development Projects */}
-          {activeTab === "development" && (
-            <section>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 lg:mb-12 text-center">
-                Development Projects
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
-                {projects.development.map((project, index) => {
-                  const isExpanded = expandedDescriptions[project.id || index];
-                  const showReadMore = project.description.length > 120;
-                  
-                  return (
-                    <div
-                      key={index}
-                      className="bg-gray-900 rounded-xl p-4 shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:transform hover:scale-[1.02] flex flex-col h-full"
-                    >
-                      {/* Project Image */}
-                      <div className="mb-3">
+        {/* -----------------------Projects Grid---------------------------- */}
+        <div className="px-1 sm:px-2">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="space-y-4 sm:space-y-6"
+          >
+            <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+              {projects.development.map((project, index) => {
+                const isExpanded = expandedDescriptions[project.id || index];
+                const showReadMore = project.description.length > 100;
+                
+                return (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="group bg-gray-800/30 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700/50 
+                      p-4 sm:p-6 shadow-lg hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 
+                      hover:border-primary-dull flex flex-col h-full"
+                  >
+                    {/* ---------------Project Image------------------ */}
+                    <div className="mb-4 sm:mb-6 relative overflow-hidden rounded-lg">
+                      <div className="aspect-video bg-gray-900 rounded-lg overflow-hidden">
                         <img
                           src={project.image || "/api/placeholder/300/160"}
                           alt={project.title}
-                          className="rounded-lg w-full h-32 sm:h-36 object-cover shadow-md"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
+                      <div className="absolute top-3 right-3">
+                        {project.completed ? (
+                          <span className="inline-flex items-center gap-1 text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-md border border-green-500/30">
+                            <CheckCircle className="w-3 h-3" />
+                            <span className="hidden xs:inline">Completed</span>
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center gap-1 text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-md border border-blue-500/30">
+                            <Clock className="w-3 h-3" />
+                            <span className="hidden xs:inline">In Progress</span>
+                          </span>
+                        )}
+                      </div>
+                    </div>
 
-                      {/* Project Content */}
-                      <div className="flex-grow flex flex-col">
-                        <h3 className="text-lg font-semibold mb-2 line-clamp-2">
+                    {/*------------------ Project Content --------------*/}
+                    <div className="flex-grow flex flex-col space-y-3 sm:space-y-4">
+                      <div>
+                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 line-clamp-2">
                           {project.title}
                         </h3>
                         
-                        <div className="flex-grow">
-                          <p className="text-gray-400 text-sm leading-relaxed mb-3">
-                            {isExpanded ? project.description : truncateText(project.description)}
-                          </p>
-                          
-                          {showReadMore && (
-                            <button
-                              onClick={() => toggleDescription(project.id || index)}
-                              className="text-primary hover:text-primary-dull text-xs font-medium flex items-center gap-1 transition-colors mb-3"
-                            >
-                              {isExpanded ? (
-                                <>
-                                  <span>Show less</span>
-                                  <ChevronUp className="w-3 h-3" />
-                                </>
-                              ) : (
-                                <>
-                                  <span>Read more</span>
-                                  <ChevronDown className="w-3 h-3" />
-                                </>
-                              )}
-                            </button>
-                          )}
-                        </div>
-
-                        {/* Project Links and Status */}
-                        <div className="space-y-3 pt-2 border-t border-gray-700">
-                          <div className="flex justify-between items-center">
-                            <div className="flex gap-3">
-                              <a
-                                href={project.demo}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-primary hover:text-primary-dull transition transform hover:scale-110 p-1"
-                                title="Live Demo"
+                        {/*-------------------- Tech Stack------------------------ */}
+                        {project.techStack && (
+                          <div className="flex flex-wrap gap-1.5 mb-3">
+                            {project.techStack.slice(0, 4).map((tech, techIndex) => (
+                              <span
+                                key={techIndex}
+                                className="inline-flex items-center gap-1 px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-md border border-gray-700"
                               >
-                                <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
-                              </a>
-                              <a
-                                href={project.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-primary hover:text-primary-dull transition transform hover:scale-110 p-1"
-                                title="Source Code"
-                              >
-                                <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-                              </a>
-                            </div>
-                            {project.completed ? (
-                              <span className="text-xs bg-green-400 text-white px-2 py-1 rounded-md whitespace-nowrap">
-                                Completed
+                                {getTechIcon(tech)}
+                                {tech}
                               </span>
-                            ) : (
-                              <span className="text-xs bg-orange-400 text-white px-2 py-1 rounded-md whitespace-nowrap">
-                                Ongoing...
+                            ))}
+                            {project.techStack.length > 4 && (
+                              <span className="inline-flex items-center px-2 py-1 bg-gray-800 text-gray-400 text-xs rounded-md border border-gray-700">
+                                +{project.techStack.length - 4} more
                               </span>
                             )}
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </section>
-          )}
-
-          {/* Design Projects */}
-          {activeTab === "design" && (
-            <section>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 lg:mb-12 text-center">
-                Design Projects
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
-                {projects.design.map((project, index) => {
-                  const isExpanded = expandedDescriptions[project.id || index];
-                  const showReadMore = project.description.length > 120;
-                  
-                  return (
-                    <div
-                      key={index}
-                      className="bg-gray-900 rounded-xl p-4 shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:transform hover:scale-[1.02] flex flex-col h-full"
-                    >
-                      {/* Project Image */}
-                      <div className="mb-3">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="rounded-lg w-full h-32 sm:h-36 object-cover shadow-md"
-                        />
-                      </div>
-
-                      {/* Project Content */}
-                      <div className="flex-grow flex flex-col">
-                        <h3 className="text-lg font-semibold mb-2 line-clamp-2">
-                          {project.title}
-                        </h3>
+                        )}
                         
                         <div className="flex-grow">
-                          <p className="text-gray-400 text-sm leading-relaxed mb-3">
-                            {isExpanded ? project.description : truncateText(project.description)}
+                          <p className="text-sm text-gray-400 leading-relaxed">
+                            {isExpanded ? project.description : truncateText(project.description, 100)}
                           </p>
                           
                           {showReadMore && (
                             <button
                               onClick={() => toggleDescription(project.id || index)}
-                              className="text-primary hover:text-primary-dull text-xs font-medium flex items-center gap-1 transition-colors"
+                              className="mt-2 text-primary hover:text-cyan-400 text-sm font-medium flex items-center gap-1 transition-colors"
                             >
                               {isExpanded ? (
                                 <>
                                   <span>Show less</span>
-                                  <ChevronUp className="w-3 h-3" />
+                                  <ChevronUp className="w-4 h-4" />
                                 </>
                               ) : (
                                 <>
                                   <span>Read more</span>
-                                  <ChevronDown className="w-3 h-3" />
+                                  <ChevronDown className="w-4 h-4" />
                                 </>
                               )}
                             </button>
                           )}
                         </div>
                       </div>
+
+                      {/*-------------------- Project Links ---------------------*/}
+                      <div className="pt-3 border-t border-gray-700/50">
+                        <div className="flex justify-between items-center">
+                          <div className="flex gap-2 sm:gap-3">
+                            {project.demo && (
+                              <motion.a
+                                href={project.demo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.1 }}
+                                className="p-2 bg-primary/10 text-primary hover:bg-primary/20 rounded-lg border border-primary/20 transition-all duration-300"
+                                title="Live Demo"
+                              >
+                                <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+                              </motion.a>
+                            )}
+                            {project.link && (
+                              <motion.a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.1 }}
+                                className="p-2 bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 rounded-lg border border-gray-700 transition-all duration-300"
+                                title="Source Code"
+                              >
+                                <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+                              </motion.a>
+                            )}
+                          </div>
+                          
+                          {project.category && (
+                            <span className="text-xs text-gray-400 font-medium px-2 py-1 bg-gray-800/30 rounded border border-gray-700">
+                              {project.category}
+                            </span>
+                          )}
+                        </div>
+                      </div>
                     </div>
-                  );
-                })}
-              </div>
-            </section>
-          )}
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
         </div>
 
-        {/* Stats Section */}
-        <div className="mt-16 lg:mt-20 text-center px-4">
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-8 lg:mb-12">
-            Project Statistics
+        {/*--------------------my statistics section --------------------- */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-12 sm:mt-16 lg:mt-20"
+        >
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-6 sm:mb-8 text-center text-white">
+            Project Insights
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
-            <div className="bg-gray-800 rounded-lg lg:rounded-xl p-4 sm:p-6 hover:transform hover:scale-105 transition-all duration-300">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary mb-2">
-                {projects.development.length + projects.design.length}
-              </h3>
-              <p className="text-gray-400 text-sm sm:text-base">Total Projects</p>
-            </div>
-            <div className="bg-gray-800 rounded-lg lg:rounded-xl p-4 sm:p-6 hover:transform hover:scale-105 transition-all duration-300">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary mb-2">
-                {projects.development.length}
-              </h3>
-              <p className="text-gray-400 text-sm sm:text-base">Development Projects</p>
-            </div>
-            <div className="bg-gray-800 rounded-lg lg:rounded-xl p-4 sm:p-6 hover:transform hover:scale-105 transition-all duration-300">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary mb-2">
-                {projects.design.length}
-              </h3>
-              <p className="text-gray-400 text-sm sm:text-base">Design Projects</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 max-w-5xl mx-auto">
+            {analytics.map((stat, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05, y: -3 }}
+                className="bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700/50 p-4 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className={`w-10 h-10 ${stat.bgColor} rounded-lg flex items-center justify-center mb-3 border border-gray-700/50`}>
+                  <stat.icon className={`w-5 h-5 ${stat.color}`} />
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold mb-1 text-white">
+                  {stat.value}{stat.label === "Success Rate" ? "%" : ""}
+                </h3>
+                <p className="text-gray-400 text-sm">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Call to Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-12 sm:mt-16 lg:mt-20 text-center"
+        >
+          <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl border border-gray-700/50 p-6 sm:p-8 shadow-lg">
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 text-white">
+              Ready to build something remarkable?
+            </h3>
+            <p className="text-gray-400 text-sm sm:text-base mb-4 sm:mb-6 max-w-2xl mx-auto">
+              Let's collaborate on your next software project. Our team specializes in creating 
+              scalable, high-performance solutions that drive business growth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-semibold 
+                  rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 text-sm sm:text-base"
+              >
+                Start a Project
+                <ExternalLink className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-800/50 border border-gray-700 text-gray-300 font-semibold 
+                  rounded-lg hover:bg-gray-700/50 transition-all duration-300 hover:shadow-lg text-sm sm:text-base"
+              >
+                View Case Studies
+                <Code className="w-4 h-4" />
+              </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
