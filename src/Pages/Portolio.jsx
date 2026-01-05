@@ -19,6 +19,7 @@ import {
   Zap
 } from "lucide-react";
 import { projects,analytics } from "../assets/assets";
+import { Link } from "react-router-dom";
 
 const PortfolioPage = () => {
 
@@ -296,7 +297,7 @@ const PortfolioPage = () => {
           </div>
         </motion.div>
 
-        {/* Call to Action */}
+        {/*---------------------- Call to Action --------------------*/}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -311,23 +312,15 @@ const PortfolioPage = () => {
               Let's collaborate on your next software project. Our team specializes in creating 
               scalable, high-performance solutions that drive business growth.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="/contact"
+            <div className="flex justify-center">
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-semibold 
                   rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 text-sm sm:text-base"
               >
                 Start a Project
                 <ExternalLink className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-800/50 border border-gray-700 text-gray-300 font-semibold 
-                  rounded-lg hover:bg-gray-700/50 transition-all duration-300 hover:shadow-lg text-sm sm:text-base"
-              >
-                View Case Studies
-                <Code className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>

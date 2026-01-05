@@ -1,37 +1,64 @@
 /* eslint-disable no-unused-vars */
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { FaPhone, FaPaperPlane, FaMapMarkerAlt } from "react-icons/fa";
-import emailjs from "@emailjs/browser";
+import { FaPhone, FaPaperPlane, FaMapMarkerAlt, FaExclamationCircle } from "react-icons/fa";
 import { socialLinks, contactInfo } from "../assets/assets";
+import { contactAPI } from "../utils/api";
 
 const Contact = () => {
   const form = useRef();
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+  const [error, setError] = useState(null);
 
-  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setLoading(true);
+  const sendEmail = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  setError(null);
+  setDone(false);
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY).then(
-      () => {
-        setLoading(false);
-        setDone(true);
-        form.current.reset();
-        // reset
-        setTimeout(() => setDone(false), 5000);
-      },
-      (error) => {
-        setLoading(false);
-        console.error("Email sending failed:", error.text);
-      }
-    );
+  const formData = {
+    name: e.target.user_name?.value || "",
+    email: e.target.user_email?.value || "",
+    subject: e.target.subject?.value || "",
+    message: e.target.message?.value || ""
   };
+
+  if (!formData.name || !formData.email || !formData.message) {
+    setError("Please fill in all required fields");
+    setLoading(false);
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.email)) {
+    setError("Please enter a valid email address");
+    setLoading(false);
+    return;
+  }
+
+  try {
+    const result = await contactAPI.sendMessage(formData);
+    
+    if (result.success) {
+      setDone(true);
+      form.current.reset();
+      setTimeout(() => setDone(false), 5000);
+    } else {
+      throw new Error(result.error || "Failed to send message");
+    }
+  } catch (error) {
+    console.error("Email sending failed:", error);
+    setError(error.message);
+    
+    setTimeout(() => {
+      setError(null);
+    }, 7000);
+  } finally {
+    setLoading(false);
+  }
+};
 
   // Embakasi, Nairobi coordinates
   const MAP_LOCATION = {
@@ -289,6 +316,35 @@ const Contact = () => {
                   </label>
                 </div>
 
+                {/* Error Message */}
+                {error && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 bg-red-500/20 border border-red-400/30 rounded-xl text-red-400"
+                  >
+                    <div className="flex items-start gap-2">
+                      <FaExclamationCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                      <span>{error}</span>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Success Message */}
+                {done && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 bg-green-500/20 border border-green-400/30 rounded-xl text-green-400"
+                  >
+                    <div className="flex items-center justify-center gap-2">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      ✅ Message sent successfully! Our team will contact you
+                      within 24 hours.
+                    </div>
+                  </motion.div>
+                )}
+
                 <motion.button
                   type="submit"
                   disabled={loading}
@@ -298,7 +354,7 @@ const Contact = () => {
                             transition-all duration-300 ${
                               loading
                                 ? "bg-gray-600 cursor-not-allowed"
-                                : "bg-gradient-to-r from-primary to-cyan-500 hover:from-primary/90 hover:to-cyan-600 shadow-lg hover:shadow-xl hover:shadow-primary/25"
+                                : "bg-primary hover:bg-primary-dull shadow-lg hover:shadow-xl hover:shadow-primary/25"
                             }`}
                 >
                   {loading ? (
@@ -313,21 +369,6 @@ const Contact = () => {
                     </>
                   )}
                 </motion.button>
-
-                {/* Success Message */}
-                {done && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="p-4 bg-green-500/20 border border-green-400/30 rounded-xl text-green-400 text-center"
-                  >
-                    <div className="flex items-center justify-center gap-2">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      ✅ Message sent successfully! Our team will contact you
-                      within 24 hours.
-                    </div>
-                  </motion.div>
-                )}
               </form>
             </motion.div>
           </div>
